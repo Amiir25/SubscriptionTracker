@@ -8,6 +8,7 @@ import subsRouter from "./routes/subscription.routes.js";
 import connectToDatabase from "./database/mongodb.js";
 import errorMiddleware from './middlewares/error.middleware.js';
 import arkjetMiddleware from './middlewares/arkjet.middleware.js';
+import workflowRouter from './routes/workflows.routes.js';
 
 // Initializing our application
 const app = express();
@@ -20,6 +21,7 @@ app.use(arkjetMiddleware);
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/subscriptions', subsRouter);
+app.use('/api/v1/workflows', workflowRouter);
 
 app.use(errorMiddleware);
 
