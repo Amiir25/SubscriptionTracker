@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const subscriptionSchema = new mongoose.Schema({
     name: {
-        type: true,
+        type: String,
         required: [true, 'Subscription name is required'],
         trim: true,
         minLength: 2,
